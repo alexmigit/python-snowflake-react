@@ -1,0 +1,4 @@
+machine_id,type,location,max_output_per_hour,maintenance_due_date
+1,CNC,Bay A,120,2025-08-01
+2,3D Printer,Bay B,60,2025-09-15
+3,Laser Cutter,Bay C,80,2025-07-25

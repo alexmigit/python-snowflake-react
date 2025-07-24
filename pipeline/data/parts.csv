@@ -1,0 +1,5 @@
+part_id,part_name,part_category,material_type,unit_cost
+101,Gear,Transmission,Steel,5.5
+102,Bracket,Support,Aluminum,3.75
+103,Panel,Body,Plastic,2.25
+104,Housing,Casing,Steel,6.1
