@@ -8,7 +8,6 @@ def run_sql_file(file_path):
     conn = snowflake.connector.connect(**snowflake_config)
     cs = conn.cursor()
     cs.execute(sql)
-    conn.commit()
     cs.close()
     conn.close()
 
