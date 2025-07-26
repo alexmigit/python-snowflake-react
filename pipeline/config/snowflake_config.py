@@ -31,8 +31,3 @@ snowflake_config = {
     "database": os.getenv("SNOWFLAKE_DATABASE"),
     "schema": os.getenv("SNOWFLAKE_SCHEMA")
 }
-
-# Establish connection
-#conn = connector.connect(**snowflake_config)
-
-#SELECT SYSTEM$ALLOWLIST();
