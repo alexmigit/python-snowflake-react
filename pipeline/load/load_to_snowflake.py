@@ -5,7 +5,10 @@ from config.snowflake_config import snowflake_config
 # Function to get a Snowflake connection
 # This function uses the snowflake_config dictionary to establish a connection
 def get_conn():
-    return snowflake.connector.connect(**snowflake_config)
+    conn = snowflake.connector.connect(
+        **snowflake_config
+    )
+    return conn
 
 # Function to load data into Snowflake
 # This function takes a dictionary of DataFrames and writes them to Snowflake
