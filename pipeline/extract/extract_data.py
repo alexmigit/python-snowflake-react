@@ -6,8 +6,8 @@ def get_data():
     and returns them as a dictionary of DataFrames.
     """
     return {
-        "log": pd.read_csv("pipeline/data/production_log.csv"),
-        "machines": pd.read_csv("pipeline/data/machines.csv"),
-        "parts": pd.read_csv("pipeline/data/parts.csv"),
-        "operators": pd.read_csv("pipeline/data/operators.csv")
+        "log": pd.read_csv("data/production_log.csv"),
+        "machines": pd.read_csv("data/machines.csv"),
+        "parts": pd.read_csv("data/parts.csv"),
+        "operators": pd.read_csv("data/operators.csv")
     }
