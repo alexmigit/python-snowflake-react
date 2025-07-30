@@ -14,6 +14,6 @@ def run_sql_file(file_path):
 # Function to run all transformations
 def run_all_transforms():
     # Create dimension tables
-    run_sql_file('transform/sql/create_dim_tables.sql')
+    run_sql_file('transform/sql/cre_dim_tables.sql')
     # Create fact table
-    run_sql_file('transform/sql/create_fact_table.sql')
+    run_sql_file('transform/sql/cre_fact_table.sql')
