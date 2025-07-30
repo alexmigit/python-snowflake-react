@@ -1,6 +1,7 @@
 from snowflake.connector.pandas_tools import write_pandas
 import snowflake.connector
 from config.snowflake_config import snowflake_config
+from concurrent.futures import ThreadPoolExecutor
 
 # Function to get a Snowflake connection
 # This function uses the snowflake_config dictionary to establish a connection
@@ -15,6 +16,12 @@ def get_conn():
 # Each DataFrame is written to a staging table with the prefix 'stg_'
 def load_to_snowflake(df_dict):
     conn = get_conn()
-    for table, df in df_dict.items():
-        write_pandas(conn, df, f"stg_{table}")
-    conn.close()
+    try:
+        def write_table(table_df):
+            table, df = table_df
+            write_pandas(conn, df, f"stg_{table}")
+
+        with ThreadPoolExecutor() as executor:
+            executor.map(write_table, df_dict.items())
+    finally:
+        conn.close()
