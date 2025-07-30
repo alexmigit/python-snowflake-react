@@ -20,7 +20,7 @@ def load_to_snowflake(df_dict):
         def write_table(table_df):
             table, df = table_df
             write_pandas(conn, df, f"stg_{table}")
-
+        # Use ThreadPoolExecutor to parallelize the writing of DataFrames
         with ThreadPoolExecutor() as executor:
             executor.map(write_table, df_dict.items())
     finally:
