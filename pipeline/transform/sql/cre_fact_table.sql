@@ -5,4 +5,4 @@ SELECT
     machine_id,
     part_id,
     operator_id
-FROM stg_production_log;
+FROM stg_log;
